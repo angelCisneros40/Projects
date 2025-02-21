@@ -1,49 +1,31 @@
-#include "deck.h"
+#include "intdeck.h"
 
-Deck::Deck()
+IntDeck::IntDeck()
 {
     init();
 }
 
-void Deck::init()
+void IntDeck::init()
 {
-    string suit[4] = {"clubs", "diamonds", "hearts", "spades"};
-    string rank[13] = {"K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2", "A"};
-
-    for (int i = 0; i < 4; i++)
-    {
-        for (int j = 0; j < 13; j++)
-        {
-            Card card;
-
-            card.suit = suit[i];
-            card.rank = rank[j];
-
-            cards.push_back(card);
-        }
-    }
-    // for (int i = 1; i < 53; i++)
-    // {
-    //     cards.push_back(i);
-    // }
+    for (int i = 1; i < 53; i++)
+        cards.push_back(i);
 }
 
-void Deck::print_cards()
+void IntDeck::print_cards()
 {
     for (int i = 0; i < cards.size(); i++)
     {
         cout << "[ ";
-        // cards[i].print();
         cout << cards[i];
         cout << " ]" << endl;
     }
 }
 
-vector<Card> Deck::shuffle()
+vector<int> IntDeck::shuffle()
 {
     int half_of_the_deck_num = cards.size() / 2;
 
-    vector<Card> shuffled_deck;
+    vector<int> shuffled_deck;
     shuffled_deck.reserve(cards.size());
 
     for (int i = 0; i < half_of_the_deck_num; ++i)
@@ -55,12 +37,12 @@ vector<Card> Deck::shuffle()
     return shuffled_deck;
 }
 
-void Deck::shuffle_deck()
+void IntDeck::shuffle_deck()
 {
     cards = shuffle();
 }
 
-void Deck::compare(Deck a)
+void IntDeck::compare(IntDeck a)
 {
     for (int i = 0; i < a.cards.size(); i++)
     {
@@ -73,7 +55,7 @@ void Deck::compare(Deck a)
     cout << "decks ARE the same!" << endl;
 }
 
-void Deck::compare_visually(Deck a)
+void IntDeck::compare_visually(IntDeck a)
 {
     for (int i = 0; i < a.cards.size(); i++)
     {

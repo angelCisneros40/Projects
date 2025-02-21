@@ -1,7 +1,6 @@
-#ifndef DECK_H
-#define DECK_H
+#ifndef INTDECK_H
+#define INTDECK_H
 using namespace std;
-#include "card.h"
 #include <vector>
 #include <iostream>
 #include <iomanip>
@@ -31,24 +30,23 @@ Write methods to:
     Make sure your main includes code to test all of your methods.
 */
 
-class Deck
+class IntDeck
 {
 public:
-    Deck();
+    IntDeck();
 
     void init();
     void print_cards();
 
     void shuffle_deck();
 
-    void compare(Deck a);
+    void compare(IntDeck a);
 
-    void compare_visually(Deck a);
+    void compare_visually(IntDeck a);
 
 private:
-    vector<Card> shuffle();
-    vector<Card> cards;
-    // vector<int> cards;
+    vector<int> shuffle();
+    vector<int> cards;
 };
 
 #endif

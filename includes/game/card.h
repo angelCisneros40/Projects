@@ -9,8 +9,19 @@ struct Card
     string suit = "null";
     string rank = "null";
 
-    void print()
+    friend ostream &operator<<(ostream &os, const Card &card)
     {
-        cout << "| " << suit << " , " << rank << " |";
+        os << "| " << card.suit << " , " << card.rank << " |";
+        return os;
+    }
+
+    bool operator==(const Card &other) const
+    {
+        return (suit == other.suit) && (rank == other.rank);
+    }
+    
+    bool operator!=(const Card &other) const
+    {
+        return !(suit == other.suit) && (rank == other.rank);
     }
 };
