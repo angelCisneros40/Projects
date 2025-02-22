@@ -8,54 +8,54 @@ using namespace std;
 bool test_deck(bool debug = false)
 {
   Deck deck;
-  deck.print_cards();
+  deck.printCards();
   cout << "\n\n====================================\n\n  shuffling deck once\n\n====================================\n\n";
-  deck.shuffle_deck();
-  deck.print_cards();
+  deck.shuffleDeck();
+  deck.printCards();
   for (int i = 0; i < 7; i++)
-    deck.shuffle_deck();
+    deck.shuffleDeck();
   cout << "\n\n====================================\n\n  shuffling (7) more times\n\n====================================\n\n";
 
-  deck.print_cards();
+  deck.printCards();
 
   cout << "\n[ A faro shuffle (perfect shuffle) needs to be done a total of 8 times in order to return the deck to its initial order ]";
 
   cout << "\n\n====================================\n\n  comparing shuffled deck to fresh deck\n\n====================================\n\n";
   Deck b;
   deck.compare(b);
-  deck.compare_visually(b);
+  deck.compareVisually(b);
 
   cout << "\n\n====================================\n\n  shuffling deck b once and comparing\n\n====================================\n\n";
-  b.shuffle_deck();
+  b.shuffleDeck();
   deck.compare(b);
-  deck.compare_visually(b);
+  deck.compareVisually(b);
   return true;
 }
 
 bool test_intdeck(bool debug = false)
 {
   IntDeck deck;
-  deck.print_cards();
+  deck.printCards();
   cout << "\n\n====================================\n\n  shuffling deck once\n\n====================================\n\n";
-  deck.shuffle_deck();
-  deck.print_cards();
+  deck.shuffleDeck();
+  deck.printCards();
   for (int i = 0; i < 7; i++)
-    deck.shuffle_deck();
+    deck.shuffleDeck();
   cout << "\n\n====================================\n\n  shuffling (7) more times\n\n====================================\n\n";
 
-  deck.print_cards();
+  deck.printCards();
 
   cout << "\n[ A faro shuffle (perfect shuffle) needs to be done a total of 8 times in order to return the deck to its initial order ]";
 
   cout << "\n\n====================================\n\n  comparing shuffled deck to fresh deck\n\n====================================\n\n";
   IntDeck b;
   deck.compare(b);
-  deck.compare_visually(b);
+  deck.compareVisually(b);
 
   cout << "\n\n====================================\n\n  shuffling deck b once and comparing\n\n====================================\n\n";
-  b.shuffle_deck();
+  b.shuffleDeck();
   deck.compare(b);
-  deck.compare_visually(b);
+  deck.compareVisually(b);
   return true;
 }
 
